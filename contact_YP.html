@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacta con nosotros</title>
+    <link rel="icon" href="Otros/logonissan.png">
+    <link rel="stylesheet" href="Estilos/style_YP.css">
+</head>
+<body>
+    <header>
+        <div class="lista">
+            </span><span><a href="about_YP.html">SOBRE MÍ</a></span>
+        </div>
+    </header>
+    <nav><!--Esta es la barra de navegación de contacta-->
+        <a href="index_YP.html"><img src="Otros/logonissan.png" width="49"></a>
+        <br>
+        NISSAN GTR - Hecho por Yerai Pinto
+    </nav>
+    <hr>
+    <h1 id="h1">CONTACTA</h1>
+    <form><!--Este es el comando para el formulario-->
+        <fieldset><!--Este comando se usa para hacer una caja de los siguientes legend-->
+            <legend>DATOS PERSONALES</legend><!--Título de cada caja-->
+                    <label for="nombre">Nombre</label><!--Nombre de cada apartado-->
+                <input type="text" name="nombre" id="nombre" placeholder="Pon tu nombre" required autofocus><!--La acción de cada apartado-->
+        <br>    
+                    <label for="nombre">Apellidos</label>
+                <input type="text" name="apellidos" id="apellidos" placeholder="Pon tus apellidos" required>
+        <br>
+                    <label for="nombre">Dirección</label>
+                <input type="text" name="direccion" id="direccion" placeholder="C/" required>
+        <br>
+                    <label for="pais">País</label>
+                <select name="pais" id="pais"><!--Comando para hacer una barra desplegable con sus siguientes opciones-->
+                    <option value="1">Alemania</option>
+                    <option value="2">Bélgica</option>
+                    <option value="3">Portugal</option>
+                    <option value="4">Italia</option>
+                    <option value="5">Inglaterra</option>
+                    <option value="6">Marruecos</option>
+                    <option value="7">España</option>
+                    <option value="8">Polonia</option>
+                    <option value="9">Rumania</option>
+                    <option value="10">Ucrania</option>
+                    <option value="11">Francia</option>
+                    <option value="12">Chipre</option>
+                    <option value="13">Croacia</option>
+                    <option value="14">Eslovaquia</option>
+                    <option value="15">Estonia</option>
+                    <option value="16">Hungría</option>
+                    <option value="17">Letonia</option>
+                    <option value="18">Lituania</option>
+                    <option value="19">Malta</option>
+                    <option value="20">Mónaco</option>
+                </select>
+                <button onclick="ordenarPais(event)">Ordenar opciones</button><!--Comando para ordenar las anteriores palabras por orden alfabético-->
+        <br>
+                    <label for="sexo">Sexo</label>
+                <input type="radio" name="sexo" value="1">Hombre
+                <input type="radio" name="sexo" value="2">Mujer
+                
+        </fieldset>
+        <fieldset>
+            <legend>DATOS NUMÉRICOS</legend>
+                    <label for="nacimiento">Fecha de Nacimiento</label>
+                <input type="date" name="nacimiento" id="nacimiento" min="1-1-1910">
+        <br>
+                    <label for="valoracion">Valoración</label>
+                <input type="range" name="valoracion" id="valoracion" min="0" max="10" step="1">
+        </fieldset>
+        <fieldset>
+            <legend>COMENTARIOS</legend>
+            <label for="correo">Correo Electrónico</label>
+            <input type="text" name="correo" id="correo" placeholder="Pon tu correo"><br><br>
+            <label for="comentarios">Ayúdanos a mejorar</label><br>
+            <textarea name="comentarios" id="comentarios" cols="60" rows="9" placeholder="Escribe algún comentario"></textarea><!--Comando para marcar el área del comentario-->
+        </fieldset>
+        <br>
+            <div id="botones"><!--Botones de enviar y borrar-->
+                <input type="submit" value="Enviar" id="benviar">
+                <input type="reset" value="Borrar" id="bres">
+            </div>
+    </form>
+    <!--Acción para el comando anterior para ordenar las palabras-->
+    <script>
+        function ordenarPais(event) {
+            event.preventDefault();
+    
+            var select = document.getElementById("pais");
+            var options = select.getElementsByTagName("option");
+            var arrOptions = Array.from(options);
+    
+            arrOptions.sort(function(a, b) {
+                return a.text.localeCompare(b.text);
+            });
+    
+            // Remover opciones del select
+            for (var i = 0; i < arrOptions.length; i++) {
+                select.remove(0);
+            }
+    
+            // Agregar opciones ordenadas al select
+            for (var i = 0; i < arrOptions.length; i++) {
+                select.add(arrOptions[i]);
+            }
+        }
+    </script>
+        <footer>
+            <a href="https://campusfp.es/" target="_blank"><img src="Otros/logocampus.png" width="200" align="right"></a>
+            <a href="https://es.linkedin.com/in/yeraipinto" target="_blank"><img src="Otros/logocampus.png" width="70" align="left"></a>
+            <a href="legal_YP.html" target="blank"><p id="p2" align="center">Legal</p></a>
+            <p id="p2" align="center">© Nissan 2024</p>        
+        </footer>
+</body>
+</html>
